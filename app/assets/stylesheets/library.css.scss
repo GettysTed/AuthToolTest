@@ -1,0 +1,39 @@
+h2{
+  float:left;
+ 
+}
+#folder_form{
+  display:none;
+    margin:0px;
+    padding:0px;
+    
+}
+
+#library_buttons{
+    position:relative;
+    margin-top:40px;
+    margin-left:-100px;
+    float:left;
+     #new_fol{
+      float:left;
+     }
+     #new_pho{
+        float:left;
+     }
+     #delete_tool{
+        float:right;
+        .btn{
+            height:22px;
+        }
+     }
+}
+#file_explorer{
+    display:table;
+    float:left;
+    overflow:auto;
+    margin-left:-100px;
+    margin-top:75px;
+    width: 200px;
+    height:600px;
+    
+}

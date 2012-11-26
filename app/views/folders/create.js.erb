@@ -1,0 +1,8 @@
+<% if @folder.new_record? %>
+  alert("Failed to create folder");
+<% else %>
+  $("#file_explorer#folder_table").find('tbody')
+    .append($('%tr')
+      .append($('%td')
+        .append("<%= j render folder %>")));
+<% end %>

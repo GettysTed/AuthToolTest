@@ -1,0 +1,45 @@
+#facebox{
+    text-align: center;
+}
+#name{
+    width:10px;
+}
+#profile_button{
+    
+}
+#site_form{
+    float:left
+}
+#map_canvas {
+    height: 600px;
+    width: 600px;
+    float: left
+}
+
+#preview{
+    width:500px;
+    height:300px;
+    float:left;
+    background-color:#EEE;
+    position:relative
+}
+#editor{
+    width:500px;
+    height:300px;
+    float:left;
+    position:absolute;
+    z-index: 50;
+    }
+
+#library{
+    display:inline;
+}
+#sources{
+    background-color: #EEE;
+    width:100px;
+    height:500px;
+    float:right;
+    h4{
+        
+    }
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tour>
+  <created-at type="datetime">2012-11-26T10:30:59Z</created-at>
+  <id type="integer">1</id>
+  <name>Awesome Tour</name>
+  <updated-at type="datetime">2012-11-26T10:30:59Z</updated-at>
+  <user-id type="integer">2</user-id>
+</tour>

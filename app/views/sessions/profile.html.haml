@@ -44,6 +44,7 @@
         %td
           .right-element
             =button_to '+',{:controller=>:tours,:action=>:new,:user_id=>user.id},:remote=>true,:class=>'btn btn-info'
+            =button_to "export to XML", {:controller=>:tours,:action=>:gen_xml}, :class=>'btn btn-info'
       -user.tours.each do |tour|    
         %tr
           %td

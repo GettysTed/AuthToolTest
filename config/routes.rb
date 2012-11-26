@@ -3,6 +3,8 @@ Photos::Application.routes.draw do
   
   
 
+  get "tours/gen_xml"
+
   root :to => "sessions#home"
   resources :photos
   resources :folders
@@ -26,5 +28,6 @@ Photos::Application.routes.draw do
   match "tours/:tour_id/user_id", :to => "tours#show"
   match "profile/:user_id/folder/:folder_id", :to => "folder#show"
   match ':controller(/:action(/:id))(.:format)'
+  match "tours/gen_xml", :to => "tours#gen_xml"
 
 end

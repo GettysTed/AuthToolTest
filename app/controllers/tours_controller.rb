@@ -29,6 +29,26 @@ class ToursController < ApplicationController
     @tour = current_user.tours.find(params[:tour_id])
     @sites = @tour.sites.to_json
   end
+
+  def gen_xml
+    @tours=current_user.tours
+    xml = Builder::XmlMarkup.new
+    xml.instruct!
+    xml.tours do
+      @tours.each { |tour|
+        xml.id tour.id
+        xml.name tour.name
+        xml.size tour.size
+        xml.desc tour.desc
+        xml.url tour.zipurl
+      }
+    end
+    
+    respond_to do |format|
+      format.xml { render :xml => xml.target! }
+      format.html { render :layout => false }
+    end
+  end
   
 
 end

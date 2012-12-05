@@ -45,3 +45,6 @@ gem 'rack-raw-upload'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'haml' # YAML-style templates
+
+#zip files
+gem 'rubyzip'

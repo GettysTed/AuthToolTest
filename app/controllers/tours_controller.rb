@@ -12,6 +12,7 @@ class ToursController < ApplicationController
   # Note: @target_folder is set in require_existing_target_folder
   def create
      @tour = Tour.create(params[:tour])
+     @tour.published=false
      @tour.save!
      respond_to do |format|
       format.html {render 'sessions/profile'}
@@ -31,16 +32,23 @@ class ToursController < ApplicationController
   end
 
   def gen_xml
+    if current_user == nil
+      current_user = User.find(params[:user_id])
+    end
     @tours=current_user.tours
     xml = Builder::XmlMarkup.new
     xml.instruct!
     xml.tours do
       @tours.each { |tour|
-        xml.id tour.id
-        xml.name tour.name
-        xml.size tour.size
-        xml.desc tour.desc
-        xml.url tour.zipurl
+        if tour.published == true
+        
+          xml.id tour.id
+          xml.name tour.name
+          xml.size tour.size
+          xml.desc tour.desc
+          xml.url tour.zipurl
+        
+        end
       }
     end
     
@@ -48,6 +56,35 @@ class ToursController < ApplicationController
       format.xml { render :xml => xml.target! }
       format.html { render :layout => false }
     end
+  end
+  
+  def zip_tour
+    
+  end
+  
+  def publish
+    tour = Tour.find(params[:tour_id])
+    tour.published = true
+    tour.save!
+    respond_to do |format|
+      format.html {render 'sessions/profile'}
+      format.js
+    end
+    
+  end
+  
+  def unpublish
+    tour = Tour.find(params[:tour_id])
+    tour.published = false
+    tour.save!
+    respond_to do |format|
+      format.html {render 'sessions/profile'}
+      format.js
+    end
+  end
+  
+  def public_list
+    
   end
   
 

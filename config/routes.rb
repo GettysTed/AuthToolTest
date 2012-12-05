@@ -28,6 +28,7 @@ Photos::Application.routes.draw do
   match "tours/:tour_id/user_id", :to => "tours#show"
   match "profile/:user_id/folder/:folder_id", :to => "folder#show"
   match ':controller(/:action(/:id))(.:format)'
-  match "tours/gen_xml", :to => "tours#gen_xml"
+  match ":user_id/gen_xml", :to => "tours#gen_xml"
+  match "published", :to => "tours#published_list"
 
 end

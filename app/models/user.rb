@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   validates :password, :confirmation => true #password confrimation attr
   validates_length_of :password, :in => 6..20, :on => :create
   validates :is_admin, :inclusion => {:in => [true, false]}
+  validates :is_accepted, :inclusion => {:in => [true, false]}
   
   before_save :encrypt_password
   after_save :clear_password

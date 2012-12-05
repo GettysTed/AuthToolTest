@@ -44,7 +44,6 @@
         %td
           .right-element
             =button_to '+',{:controller=>:tours,:action=>:new,:user_id=>user.id},:remote=>true,:class=>'btn btn-info'
-            =button_to "export to XML", {:controller=>:tours,:action=>:gen_xml}, :class=>'btn btn-info'
       -user.tours.each do |tour|    
         %tr
           %td
@@ -53,3 +52,7 @@
           %td
             .right-element
               =button_to "view tour", {:controller=>:tours,:action=>:show,:tour_id=>tour.id},{:class=>'btn btn-info'}
+              - if tour.published == false
+                =button_to "publish", {:controller=>:tours,:action=>:publish, :tour_id => tour.id}, {:class=>'btn btn-info'}
+              - else
+                =button_to "unpublish", {:controller=>:tours,:action=>:unpublish, :tour_id => tour.id}, {:class=>'btn btn-info'}

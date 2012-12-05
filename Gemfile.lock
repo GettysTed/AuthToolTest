@@ -93,6 +93,7 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     rmagick (2.13.1)
+    rubyzip (0.9.9)
     sass (3.2.1)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -132,6 +133,7 @@ DEPENDENCIES
   rack-raw-upload
   rails (= 3.2.8)
   rmagick
+  rubyzip
   sass-rails (~> 3.2.3)
   sqlite3
   tinymce-rails
